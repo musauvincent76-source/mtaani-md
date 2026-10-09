@@ -3,7 +3,7 @@ const settings = {
   packname: '🔥MTAANI-MD🔥',
   author: 'alex Musau',
   botName: "🔥MTAANI-MD🔥",
-  botOwner: 'Alex musau,
+  botOwner: 'Alex musau',
   ownerNumber: '254703182307',
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
@@ -11,6 +11,7 @@ const settings = {
   storeWriteInterval: 10000,
   description: "This is a bot for managing group commands and automating tasks.",
   version: "3.0.6",
+  menuImage: "https://raw.githubusercontent.com/musauvincent76-source/mtaani-md/main/assets/IMG-20261009-WA6608.jpg",
   updateZipUrl: "https://github.com/bigbosssunzy/JOKER-MD/archive/refs/heads/main.zip",
 };
 

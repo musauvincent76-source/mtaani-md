@@ -1,12 +1,29 @@
-const express=require('express');
-const app=express();
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(express.static(__dirname));
-app.get('/',(req,res)=>res.sendFile(__dirname+'/index.html'));
-app.post('/pair',(req,res)=>{
-  const {number}=req.body;
-  if(!number||!number.startsWith('254')) return res.json({code:'START WITH 254'});
-  res.json({code:'MT-'+Math.random().toString(36).slice(2,6).toUpperCase()});
+
+// Lisha index.html yako
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
-const PORT=process.env.PORT||3000;
-app.listen(PORT,()=>console.log('Site on',PORT));
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', bot: 'jokerbot' });
+});
+
+// Anza bot baada ya server
+try {
+  require('./index.js');
+  console.log('✅ Bot index.js loaded');
+} catch (e) {
+  console.log('⚠️ Bot not loaded:', e.message);
+}
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Site on ${PORT}`);
+  console.log(`Serving index.html`);
+});

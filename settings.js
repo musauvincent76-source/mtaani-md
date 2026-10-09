@@ -1,9 +1,9 @@
 const settings = {
   prefix: ".",
   packname: '🔥MTAANI-MD🔥',
-  author: 'Alex Musau',
-  botName: "MTAANI-MD",
-  botOwner: 'Musau Vincent',
+  author: 'alex Musau',
+  botName: "🔥MTAANI-MD🔥",
+  botOwner: 'Alex musau,
   ownerNumber: '254703182307',
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",

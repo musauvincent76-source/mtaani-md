@@ -1,4 +1,4 @@
-# 🤖 JOKER-MD
+# 🤖 mtaani-md
 
 This is a WhatsApp bot built using the Baileys library for group management, including features like tagging all members, muting/unmuting, and many more. It's designed to help admins efficiently manage WhatsApp groups.
 
@@ -82,7 +82,7 @@ Click the button below to fork the JOKER-MD repository to your GitHub account:
 
 ## 📖 About
 
-The JOKER-MD WhatsApp Bot assists group admins by providing them with tools to efficiently manage large WhatsApp groups. The bot uses the Baileys library to interact with the WhatsApp Web API and supports multi-device features.
+The mtaani-MD WhatsApp Bot assists group admins by providing them with tools to efficiently manage large WhatsApp groups. The bot uses the Baileys library to interact with the WhatsApp Web API and supports multi-device features.
 
 It is lightweight and can be easily customized to add more commands as per your requirements. The bot runs in a Node.js environment and provides Pair Code or QR code-based authentication to link your WhatsApp account.
 

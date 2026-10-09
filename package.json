@@ -6,9 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [
-    "whatsapp-bot"
-  ],
+  "keywords": ["whatsapp-bot"],
   "author": "",
   "license": "ISC",
   "dependencies": {

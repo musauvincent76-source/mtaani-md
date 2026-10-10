@@ -9,7 +9,7 @@ This is a WhatsApp bot built using the Baileys library for group management, inc
 </div> 
 
 <div align="center"> 
-  <img src="assets/bot_image.jpg" alt="MTAANI-MD" height="300" onerror="this.src='https://placehold.co/600x300?text=JOKER-MD+Bot'"> 
+  <img src="assets/IMG-20261009-WA6608.jpg" alt="MTAANI-MD" height="300" onerror="this.src='https://placehold.co/600x300?text=JOKER-MD+Bot'"> 
 </div>
 
 <div align="center">

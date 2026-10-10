@@ -1,7 +1,7 @@
 {
   "name": "MTAANI-MD-BOT",
   "description": "A powerful, feature-rich WhatsApp user bot built with the Baileys library.",
-  "keywords": ["whatsapp", "bot", "baileys", "joker", "multi-device", "js"],
+  "keywords": ["whatsapp", "bot", "baileys", "mtaani", "multi-device", "js"],
   "logo": "https://i.postimg.cc/hPz35s3c/menu1.jpg",
   "repository": "https://github.com/bigbosssunzy/JOKER-MD",
   "success_url": "/",

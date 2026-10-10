@@ -1,15 +1,15 @@
-# 🤖 JOKER-MD
+# 🤖 MTAANI-MD
 
 This is a WhatsApp bot built using the Baileys library for group management, including features like tagging all members, muting/unmuting, and many more. It's designed to help admins efficiently manage WhatsApp groups.
 
 <div align="center"> 
   <a href="https://git.io/typing-svg"> 
-    <img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=JOKER-MD;Multi+Device+Whatsapp+Bot;Coded+By+bigbosssunzy" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=MTAANI;Multi+Device+Whatsapp+Bot;Coded+By+bigbosssunzy" alt="Typing SVG" />
   </a> 
 </div> 
 
 <div align="center"> 
-  <img src="assets/bot_image.jpg" alt="JOKER-MD" height="300" onerror="this.src='https://placehold.co/600x300?text=JOKER-MD+Bot'"> 
+  <img src="assets/bot_image.jpg" alt="MTAANI-MD" height="300" onerror="this.src='https://placehold.co/600x300?text=JOKER-MD+Bot'"> 
 </div>
 
 <div align="center">

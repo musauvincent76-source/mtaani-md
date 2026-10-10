@@ -1,5 +1,5 @@
 {
-  "name": "JOKER-MD-BOT",
+  "name": "MTAANI-MD-BOT",
   "description": "A powerful, feature-rich WhatsApp user bot built with the Baileys library.",
   "keywords": ["whatsapp", "bot", "baileys", "joker", "multi-device", "js"],
   "logo": "https://i.postimg.cc/hPz35s3c/menu1.jpg",
@@ -15,7 +15,7 @@
     "OWNER_NUMBER": {
       "description": "Your main WhatsApp number with country code. Do not add '+' or '-' spaces.",
       "required": true,
-      "value": "2347086057694"
+      "value": "254703182307"
     }
   },
   "formation": {

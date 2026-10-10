@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mtaani MD - Get your pairing code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #101b3b;
+    --ink-2: #18264f;
+    --line: #2b3b6e;
+    --paper: #f3f5ff;
+    --muted: #a9b3d6;
+    --sun: #ffb300;
+    --sun-ink: #2a1c00;
+    --bad: #ff8a80;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { min-height: 100%; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    padding: 28px 16px 48px;
+  }
+  main { width: 100%; max-width: 460px; }
+  h1 {
+    font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .lead { color: var(--muted); margin-bottom: 28px; max-width: 38ch; }
+
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  .field {
+    display: flex;
+    align-items: center;
+    background: var(--ink-2);
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 0 14px;
+    transition: border-color .15s;
+  }
+  .field:focus-within { border-color: var(--sun); }
+  .field span { color: var(--muted); font-weight: 600; padding-right: 8px; }
+  input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--paper);
+    font: inherit;
+    font-size: 1.15rem;
+    letter-spacing: .04em;
+    padding: 16px 0;
+  }
+  input::placeholder { color: #66749f; }
+  .hint { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+
+  button { font: inherit; cursor: pointer; border: 0; border-radius: 14px; }
+  button:focus-visible, input:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
+  #go {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    background: var(--sun);
+    color: var(--sun-ink);
+    transition: transform .1s, opacity .15s;
+  }
+  #go:active { transform: scale(.98); }
+  #go:disabled { opacity: .55; cursor: wait; }
+
+  #msg { min-height: 1.5em; margin-top: 14px; font-weight: 500; }
+  #msg.err { color: var(--bad); }
+
+  #result { display: none; margin-top: 26px; }
+  #result.show { display: block; }
+  .code-label { color: var(--muted); margin-bottom: 10px; }
+  .code {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 14px repeat(4, 1fr);
+    gap: 6px;
+    align-items: center;
+  }
+  .code .dash { text-align: center; color: var(--muted); font-weight: 800; font-size: 1.4rem; }
+  .code .ch {
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px 0;
+    font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.3rem, 7vw, 1.9rem);
+    animation: flip .35s ease backwards;
+    animation-delay: calc(var(--i) * 45ms);
+  }
+  @keyframes flip {
+    from { transform: rotateX(90deg); opacity: 0; }
+    to { transform: rotateX(0); opacity: 1; }
+  }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+  #copy {
+    padding: 10px 18px;
+    font-weight: 600;
+    background: var(--ink-2);
+    color: var(--paper);
+    border: 2px solid var(--line);
+  }
+  #timer { color: var(--muted); font-size: .95rem; }
+  #timer.low { color: var(--bad); }
+
+  .steps { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .steps h2 {
+    font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .steps ol { padding-left: 1.2em; color: var(--muted); }
+  .steps li { margin-bottom: 6px; padding-left: 4px; }
+  .steps b { color: var(--paper); font-weight: 600; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .code .ch { animation: none; }
+    #go { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Link your WhatsApp to Mtaani MD</h1>
+  <p class="lead">Enter your number, get a pairing code, then type it into WhatsApp.</p>
+
+  <label for="num">WhatsApp number</label>
+  <div class="field">
+    <span>+</span>
+    <input id="num" type="tel" inputmode="numeric" autocomplete="tel" placeholder="2547XXXXXXXX" maxlength="15">
+  </div>
+  <p class="hint">Include the country code, no + or spaces. Example: 254712345678</p>
+
+  <button id="go" type="button">Get pairing code</button>
+  <p id="msg" role="status" aria-live="polite"></p>
+
+  <section id="result" aria-live="polite">
+    <p class="code-label">Your pairing code:</p>
+    <div class="code" id="code"></div>
+    <div class="row">
+      <button id="copy" type="button">Copy code</button>
+      <span id="timer"></span>
+    </div>
+  </section>
+
+  <section class="steps">
+    <h2>How to enter the code</h2>
+    <ol>
+      <li>Open <b>WhatsApp</b> on the phone that has this number.</li>
+      <li>Tap <b>Linked devices</b>.</li>
+      <li>Tap <b>Link a device</b>, then <b>Link with phone number instead</b>.</li>
+      <li>Enter the 8-character code shown above.</li>
+    </ol>
+  </section>
+</main>
+
+<script>
+  // The route on your server that returns the code. Change it if yours is named differently.
+  const PAIR_ENDPOINT = "/pair";
+  const CODE_LIFETIME = 60; // seconds shown on the timer
+
+  const $ = (id) => document.getElementById(id);
+  const num = $("num"), go = $("go"), msg = $("msg");
+  const result = $("result"), codeBox = $("code"), timer = $("timer"), copyBtn = $("copy");
+  let tick = null, currentCode = "";
+
+  num.addEventListener("input", () => { num.value = num.value.replace(/\D/g, ""); });
+  num.addEventListener("keydown", (e) => { if (e.key === "Enter") go.click(); });
+
+  function setMsg(text, isErr) {
+    msg.textContent = text || "";
+    msg.className = isErr ? "err" : "";
+  }
+
+  function showCode(raw) {
+    const clean = String(raw).replace(/[^A-Za-z0-9]/g, "").toUpperCase().slice(0, 8);
+    currentCode = clean.slice(0, 4) + "-" + clean.slice(4);
+    codeBox.innerHTML = "";
+    [...clean].forEach((c, i) => {
+      if (i === 4) {
+        const d = document.createElement("span");
+        d.className = "dash";
+        d.textContent = "-";
+        codeBox.appendChild(d);
+      }
+      const s = document.createElement("span");
+      s.className = "ch";
+      s.style.setProperty("--i", i);
+      s.textContent = c;
+      codeBox.appendChild(s);
+    });
+    result.classList.add("show");
+    startTimer();
+  }
+
+  function startTimer() {
+    clearInterval(tick);
+    let left = CODE_LIFETIME;
+    const draw = () => {
+      if (left <= 0) {
+        timer.textContent = "Code expired. Request a new one.";
+        timer.className = "low";
+        clearInterval(tick);
+        return;
+      }
+      timer.textContent = "Expires in " + left + "s";
+      timer.className = left <= 10 ? "low" : "";
+      left--;
+    };
+    draw();
+    tick = setInterval(draw, 1000);
+  }
+
+  go.addEventListener("click", async () => {
+    const n = num.value.trim();
+    if (n.length < 10 || n.length > 15) {
+      setMsg("Invalid number. Include the country code, for example 254712345678.", true);
+      num.focus();
+      return;
+    }
+    go.disabled = true;
+    go.textContent = "Creating code...";
+    setMsg("");
+    result.classList.remove("show");
+    clearInterval(tick);
+
+    try {
+      const res = await fetch(PAIR_ENDPOINT + "?number=" + encodeURIComponent(n));
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.code) {
+        throw new Error(data.error || "Could not get a code. Try again in a moment.");
+      }
+      showCode(data.code);
+      setMsg("Your code is ready. Enter it in WhatsApp now.");
+    } catch (err) {
+      setMsg(err.message || "No connection or the server is not responding. Try again.", true);
+    } finally {
+      go.disabled = false;
+      go.textContent = "Get pairing code";
+    }
+  });
+
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(currentCode.replace("-", ""));
+      copyBtn.textContent = "Copied";
+    } catch (e) {
+      copyBtn.textContent = "Copy manually";
+    }
+    setTimeout(() => (copyBtn.textContent = "Copy code"), 1800);
+  });
+</script>
+</body>
+  </html>

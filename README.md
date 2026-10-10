@@ -1,22 +1,22 @@
-# 🤖 mtaani-md
+# 🤖 JOKER-MD
 
 This is a WhatsApp bot built using the Baileys library for group management, including features like tagging all members, muting/unmuting, and many more. It's designed to help admins efficiently manage WhatsApp groups.
 
 <div align="center"> 
   <a href="https://git.io/typing-svg"> 
-    <img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=MTAANI;Multi+Device+Whatsapp+Bot;Coded+By+alexmusau" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=JOKER-MD;Multi+Device+Whatsapp+Bot;Coded+By+bigbosssunzy" alt="Typing SVG" />
   </a> 
 </div> 
 
 <div align="center"> 
-  <img src="assets/bot_image.jpg" alt="MTAANI" height="300" onerror="this.src='https://placehold.co/600x300?text=MTAANI-md+Bot'"> 
+  <img src="assets/bot_image.jpg" alt="JOKER-MD" height="300" onerror="this.src='https://placehold.co/600x300?text=JOKER-MD+Bot'"> 
 </div>
 
 <div align="center">
   <img src="https://img.shields.io/github/followers/bigbosssunzy?style=for-the-badge&label=Followers" alt="Followers"/>
-  <img src="https://img.shields.io/github/stars/bigbosssunzy/MTAANI-MD?style=for-the-badge&label=Stars" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/bigbosssunzy/MTAANI-MD?style=for-the-badge&label=Forks" alt="Forks"/>
-  <img src="https://img.shields.io/github/watchers/bigbosssunzy/MTAANI-MD?style=for-the-badge&label=Watchers" alt="Watchers"/>
+  <img src="https://img.shields.io/github/stars/bigbosssunzy/JOKER-MD?style=for-the-badge&label=Stars" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/bigbosssunzy/JOKER-MD?style=for-the-badge&label=Forks" alt="Forks"/>
+  <img src="https://img.shields.io/github/watchers/bigbosssunzy/JOKER-MD?style=for-the-badge&label=Watchers" alt="Watchers"/>
 </div>
 
 ---
@@ -28,7 +28,7 @@ This is a WhatsApp bot built using the Baileys library for group management, inc
 Click the button below to fork the JOKER-MD repository to your GitHub account:
 
 <div align="center">
-  <a href="https://github.com/bigbosssunzy/MTAANI-MD/fork">
+  <a href="https://github.com/bigbosssunzy/JOKER-MD/fork">
     <img src="https://img.shields.io/badge/Fork-Repository-blue?style=for-the-badge" alt="Fork the repository"/>
   </a>
 </div>
@@ -82,7 +82,7 @@ Click the button below to fork the JOKER-MD repository to your GitHub account:
 
 ## 📖 About
 
-The mtaani-MD WhatsApp Bot assists group admins by providing them with tools to efficiently manage large WhatsApp groups. The bot uses the Baileys library to interact with the WhatsApp Web API and supports multi-device features.
+The JOKER-MD WhatsApp Bot assists group admins by providing them with tools to efficiently manage large WhatsApp groups. The bot uses the Baileys library to interact with the WhatsApp Web API and supports multi-device features.
 
 It is lightweight and can be easily customized to add more commands as per your requirements. The bot runs in a Node.js environment and provides Pair Code or QR code-based authentication to link your WhatsApp account.
 
@@ -101,7 +101,7 @@ It is lightweight and can be easily customized to add more commands as per your 
 
     ```bash
     git clone [https://github.com/bigbosssunzy/JOKER-MD.git](https://github.com/bigbosssunzy/JOKER-MD.git)
-    cd MTAANI-MD
+    cd JOKER-MD
     ```
 
 2. **Install the dependencies:**
